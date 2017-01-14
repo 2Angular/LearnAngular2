@@ -1,0 +1,48 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>Refine by:</div>
+            <div class='col-md-4'>
+                <input type='text' />
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <h3>Refined by: </h3>
+            </div>
+        </div>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='mobiles && mobiles.length'>
+                <thead>
+                    <tr>
+                        <th>
+                            <button class='btn btn-primary' (click)="displayMobiles()" >
+                                Display Mobile Images - might consume data
+                            </button>
+                        </th>
+                        <th>Mobile-Name</th>
+                        <th>Code</th>
+                        <th>Released</th>
+                        <th>Price</th>
+                        <th>user review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let mobile of mobiles'>
+                        <td *ngIf="showImages">
+                           <img [src]='imageUrl+mobile.image'  style="height:75px;width:75px;"/>
+                        </td>
+                        <td>{{ mobile.name }}</td>
+                        <td>{{ mobile.model }}</td>
+                        <td>{{ mobile.releaseDate }}</td>
+                        <td>{{ mobile.price }}</td>
+                        <td>{{ mobile.rating }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

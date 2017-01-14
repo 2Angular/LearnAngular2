@@ -1,0 +1,13 @@
+Routing :
+
+Define Mobile Detail html
+
+define mobile detail component
+
+import routerparam
+
+inject in the constructer
+
+access the param requried and assign to local variable
+
+define back button and configure the route back
